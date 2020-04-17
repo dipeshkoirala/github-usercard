@@ -3,12 +3,65 @@
            https://api.github.com/users/<your name>
 */
 
+function loadAxios(url) {
+  let script = document.createElement("script");
+  script.src = url;
+  document.head.appendChild(script);
+}
+
+loadAxios("https://unpkg.com/axios/dist/axios.min.js");
+
+let script1 = document.createElement("script");
+script1.src = "./GitHubCard/index.js";
+document.head.appendChild(script1);
+
+loadJS("https://api.github.com/users/dipeshkoirala");
+
+function loadJS(url) {
+  let script2 = document.createElement("script");
+  script2.src = url;
+  document.body.appendChild(script2);
+}
+var nodeDoctype = document.implementation.createDocumentType(
+  "html",
+  "-//W3C//DTD XHTML 1.0 Transitional//EN",
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtdd"
+);
+if (document.doctype) {
+  document.replaceChild(nodeDoctype, document.doctype);
+} else {
+  document.insertBefore(nodeDoctype, document.childNodes[0]);
+}
+
+//const axios = require("axios").default;
+const cardRect = document.querySelector(".cards");
+
+axios
+  .get("https://api.github.com/users/dipeshkoirala")
+  .then(map(response) => {
+    
+    resopnse.data.
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
 
    Skip to Step 3.
 */
+function component(obj) {
+  const card = document.createElement("div");
+  const data1 = document.createElement("div");
+  const data2 = document.createElement("div");
+  const name=docuemnt.createElement(h2);
+  const uName=document.createElement('p')
+  const followers=document.createElement('p')
+  
+}
 
 /* Step 4: Pass the data received from Github into your function, 
            create a new component and add it to the DOM as a child of .cards
